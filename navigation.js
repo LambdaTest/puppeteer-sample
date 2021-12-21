@@ -6,26 +6,36 @@ const expect = require('chai').expect;
 (async () => {
     const caps = {
         'browserName': 'Chrome',
-        'version': '90.0',
+        'version': 'latest',
         'platform': 'Windows 10',
         'build': 'puppeteer-build-1',
         'name': 'My first Puppeteer test',
-        'username': 'your username',
-        'access_key': 'your accesskey'
+        'resolution':'1366x768',
+        'username': 'Your UserName',
+        'access_key': 'Your Access Key',
     };
-    try{
+    try {
         const browser = await puppeteer.connect({
             browserWSEndpoint:
-            `wss://stage-cdp.lambdatest.com/puppeteer?caps=${encodeURIComponent(JSON.stringify(caps))}`,
-            });
-        
+                `wss://stage-cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(caps))}`,
+        });
+
         const page = await browser.newPage();
+        await page.setViewport({
+            width: 1024,
+            height: 768,
+            deviceScaleFactor: 1,
+          });
+        console.log("Navigating to LambdaTest");
         await page.goto('https://www.lambdatest.com/');
+        console.log("Navigating to Pricing");
         await page.goto('https://www.lambdatest.com/pricing');
+        console.log("Navigating to Automation");
         await page.goto('https://www.lambdatest.com/automation-testing');
+        console.log("Closing browser");
         await browser.close();
-        
-    }catch(e){
-        // console.log("Error - ", e);
+
+    } catch (e) {
+        console.log("Error - ", e);
     }
 })();
