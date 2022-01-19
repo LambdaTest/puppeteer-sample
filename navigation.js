@@ -12,8 +12,8 @@ const expect = require('chai').expect;
             'build': 'puppeteer-build-1',
             'name': 'My first Puppeteer test',
             'resolution':'1366x768',
-            'username': 'Your UserName',
-            'access_key': 'Your Access Key',
+            'user': 'Your UserName',
+            'accessKey': 'Your Access Key',
             'network': true
         }
    };
