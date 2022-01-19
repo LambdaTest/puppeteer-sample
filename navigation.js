@@ -3,21 +3,25 @@ const { strict } = require('once');
 const puppeteer = require('puppeteer');
 const expect = require('chai').expect;
 
-(async () => {
-    const caps = {
+(async () => {    
+    const capabilities = {
         'browserName': 'Chrome',
-        'version': 'latest',
-        'platform': 'Windows 10',
-        'build': 'puppeteer-build-1',
-        'name': 'My first Puppeteer test',
-        'resolution':'1366x768',
-        'username': 'Your UserName',
-        'access_key': 'Your Access Key',
-    };
+        'browserVersion': 'latest',
+        'LT:Options': {
+            'platform': 'Windows 10',
+            'build': 'puppeteer-build-1',
+            'name': 'My first Puppeteer test',
+            'resolution':'1366x768',
+            'username': 'Your UserName',
+            'access_key': 'Your Access Key',
+            'network': true
+        }
+   };
+    
     try {
         const browser = await puppeteer.connect({
             browserWSEndpoint:
-                `wss://stage-cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(caps))}`,
+                `wss://stage-cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`,
         });
 
         const page = await browser.newPage();
