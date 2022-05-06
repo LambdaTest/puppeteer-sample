@@ -21,7 +21,7 @@ const expect = require('chai').expect;
     try {
         const browser = await puppeteer.connect({
             browserWSEndpoint:
-                `wss://stage-cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`,
+                `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`,
         });
 
         const page = await browser.newPage();
