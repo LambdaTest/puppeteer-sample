@@ -16,11 +16,14 @@ If node isn’t of the latest version then you can update it using the below com
 
 `$ npm install npm@latest -g`
 
-3. Install npm Dependencies
+3. ```git clone https://github.com/LambdaTest/puppeteer-sample.git```
+    ```cd puppeteer-sample```
+
+4. Install npm Dependencies
 
 `npm install`
 
- 4. **LambdaTest Authentication Credentials:** Make sure you have your LambdaTest credentials with you to run test automation scripts with Jest on LambdaTest Selenium Grid. You can obtain these credentials from the [LambdaTest Automation Dashboard](https://automation.lambdatest.com/) or through [LambdaTest Profile](https://accounts.lambdatest.com/detail/profile).
+5. **LambdaTest Authentication Credentials:** Make sure you have your LambdaTest credentials with you to run test automation scripts with Jest on LambdaTest Selenium Grid. You can obtain these credentials from the [LambdaTest Automation Dashboard](https://automation.lambdatest.com/) or through [LambdaTest Profile](https://accounts.lambdatest.com/detail/profile).
 
 Set LambdaTest Username and Access Key in environment variables.
 
