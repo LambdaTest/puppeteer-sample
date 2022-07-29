@@ -4,8 +4,8 @@ const caps_chrome = {
   'browserVersion': 'latest',
   'LT:Options': {
     'platform': 'Windows 10',
-    'build': 'Sample Puppeteer-Jest',
-    'name': 'Puppeteer-jest test on Chrome',
+    'build': 'Sample Puppeteer-Mocha',
+    'name': 'Puppeteer-mocha test on Chrome',
     'resolution': '1366x768',
     'user': process.env.LT_USERNAME,
     'accessKey': process.env.LT_USER_KEY,
