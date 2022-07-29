@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "jest-puppeteer": "^6.1.1",
+    "puppeteer": "^15.4.0"
+  },
+  "scripts": {
+    "test": "jest --maxWorkers=2"
+  },
+  "dependencies": {
+    "jest": "^28.1.3"
+  }
+}
