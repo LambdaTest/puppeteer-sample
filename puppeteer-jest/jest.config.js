@@ -1,11 +1,11 @@
 const config = {
-  verbose: true,
-  preset: "jest-puppeteer",
-  rootDir     : '.',
+	verbose     : true,
+	preset      : 'jest-puppeteer',
+	rootDir     : '.',
 	testTimeout : 400000,
 	testMatch   : [
-		'<rootDir>/specs/sample.spec.js'
-	],
+		'<rootDir>/specs/*.spec.js'
+	]
 };
 
 module.exports = config;
