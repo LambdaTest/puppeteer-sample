@@ -13,6 +13,19 @@ const caps_chrome = {
 		network    : true
 	}
 };
+const caps_edge = {
+	browserName    : 'MicrosoftEdge',
+	browserVersion : 'latest',
+	'LT:Options'   : {
+		platform   : 'Windows 10',
+		build      : 'Sample Puppeteer-Mocha',
+		name       : 'Puppeteer-mocha test on Edge',
+		resolution : '1366x768',
+		user       : process.env.LT_USERNAME,
+		accessKey  : process.env.LT_USER_KEY,
+		network    : true
+	}
+};
 
 let browser = null;
 let page = null;
