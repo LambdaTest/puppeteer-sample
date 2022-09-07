@@ -1,0 +1,16 @@
+{
+  "name": "puppeteer-codecept",
+  "version": "1.0.0",
+  "description": "Puppeteer-codecept sample with Lambdatest",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx codeceptjs run",
+    "test-parallel": "npx codeceptjs run-workers 3"
+  },
+  "author": "Mukesh Rana",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "^3.3.5",
+    "puppeteer": "^17.1.1"
+  }
+}
