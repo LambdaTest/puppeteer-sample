@@ -29,6 +29,12 @@
 * [Running Your First Puppeteer Test](#running-your-first-puppeteer-test)
 * [View Your Puppeteer Test Results](#view-your-puppeteer-test-results)
 * [Run Puppeteer Tests In Gitpod](#run-puppeteer-tests-in-gitpod)
+* [Test Execution Setup](https://github.com/LambdaTest/puppeteer-sample/blob/main/puppeteer-docs/test-execution-setup.md)
+* [Local Testing](https://github.com/LambdaTest/puppeteer-sample/blob/main/puppeteer-docs/local-testing.md)
+* [Integrate With Mocha](https://github.com/LambdaTest/puppeteer-sample/blob/main/puppeteer-docs/puppeteer-mocha.md)
+* [Integrate With Jest](https://github.com/LambdaTest/puppeteer-sample/blob/main/puppeteer-docs/puppeteer-jest.md)
+* [Puppeteer Testing With CI/CD](https://github.com/LambdaTest/puppeteer-sample/blob/main/puppeteer-docs/puppeteer-testing-ci-cd.md)
+
 
 ## Pre-requisites
 
