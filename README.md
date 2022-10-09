@@ -58,7 +58,7 @@ export LT_USERNAME="YOUR_LAMBDATEST_USERNAME"
 export LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 ```
 
-## Run Your First Puppeteer Test
+## Running Your First Puppeteer Test
 
 >**Test Scenario**: The below test script runs on Chrome browser running Windows 10. It visits the LambdaTest platform, clicks on the Pricing page, and navigates to the Automation Testing page.
 
