@@ -21,8 +21,7 @@ let browser, page;
 
   try {
     browser = await puppeteer.connect({
-      browserWSEndpoint: `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(
-          JSON.stringify(capabilities))}`,
+      browserWSEndpoint: `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`
     });
 
     page = await browser.newPage();
@@ -35,6 +34,7 @@ let browser, page;
     await page.goto("https://www.bing.com");
     await page.waitForNavigation()
 
+    // Add the following command in order to take screenshot in SmartUI
     await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({
       action: "smartui.takeScreenshot",
       arguments: {screenshotName: "<Your Screenshot Name>"},
