@@ -32,7 +32,6 @@ let browser, page;
     });
 
     await page.goto("https://www.bing.com");
-    await page.waitForNavigation()
 
     // Add the following command in order to take screenshot in SmartUI
     await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({
