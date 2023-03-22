@@ -1,5 +1,5 @@
 {
-	"name": "puppeteer-mocha",
+	"name": "puppeteer-jest",
 	"version": "1.0.0",
 	"author": "Sarath Sasikumar",
 	"license": "ISC",
