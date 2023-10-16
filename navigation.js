@@ -36,10 +36,14 @@ const expect = require('chai').expect;
         await page.goto('https://www.lambdatest.com/pricing');
         console.log("Navigating to Automation");
         await page.goto('https://www.lambdatest.com/automation-testing');
+
+        await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'passed', remark: "Test Passed" } })}`)
+
         console.log("Closing browser");
         await browser.close();
 
     } catch (e) {
+        await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'failed', remark: "Test Failed" } })}`)
         console.log("Error - ", e);
     }
 })();
