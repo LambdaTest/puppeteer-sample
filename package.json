@@ -1,11 +1,12 @@
 {
   "devDependencies": {
     "chai": "^4.3.4",
-    "puppeteer": "^8.0.0"
+    "puppeteer": "21.3.8"
   },
   "scripts": {
     "test": "npm run single",
-    "single": "node navigation.js"
+    "single": "node navigation.js",
+    "parallel": "node puppeteer-parallel.js"
   },
   "dependencies": {
     "axios": "^0.21.1"
