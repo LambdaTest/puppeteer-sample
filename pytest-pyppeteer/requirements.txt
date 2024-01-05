@@ -1,0 +1,5 @@
+pytest
+pyppeteer
+pytest-asyncio
+pytest-xdist
+pytest-order

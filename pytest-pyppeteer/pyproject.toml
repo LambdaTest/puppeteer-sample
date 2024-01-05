@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "Web automation with Pyppeteer"
+version = "0.1.0"
+description = ""
+authors = ["LambdaTest <support@lambdatest.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7.9"
+flake8 = "^4.0.1"
+autopep8 = "^1.6.0"
+pytest-asyncio = "^0.21.0"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
