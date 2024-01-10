@@ -53,7 +53,7 @@ poetry install
 4. Install the necessary dependencies
 
 ```
-pip install - r requirements.txt
+pip install -r requirements.txt
 ```
 
 5. In order to run your pyppeteer tests, you will need to set your LambdaTest username and access key in the environment variables. Click the **Access Key** button at the top-right of the Automation Dashboard to access it.
