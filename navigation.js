@@ -15,6 +15,7 @@ const expect = require('chai').expect;
             'user': process.env.LT_USERNAME || "Your Username",
             'accessKey': process.env.LT_ACCESS_KEY || "Your Access Key",
             'network': true
+            'visual': true
         }
    };
     
