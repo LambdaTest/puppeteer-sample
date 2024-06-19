@@ -17,9 +17,10 @@ const expect = require('chai').expect;
             'network': true
         }
    };
-    
+
+    let browser;
     try {
-        const browser = await puppeteer.connect({
+        browser = await puppeteer.connect({
             browserWSEndpoint:
                 `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`,
         });
@@ -43,7 +44,11 @@ const expect = require('chai').expect;
         await browser.close();
 
     } catch (e) {
+        if (browser) {
+        const page = await browser.newPage();
         await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'failed', remark: "Test Failed" } })}`)
+        await browser.close();
+        }
         console.log("Error - ", e);
     }
 })();
