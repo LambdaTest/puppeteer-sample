@@ -1,10 +1,10 @@
-const puppeteer = require('puppeteer');
-const expect = require('chai').expect;
+import { connect } from 'puppeteer';
+import { expect } from 'chai';
 
 const parallelTests = async (capability) => {
   console.log('Initialising test:: ', capability['LT:Options']['name'])
 
-  const browser = await puppeteer.connect({
+  const browser = await connect({
     browserWSEndpoint: `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capability))}`
   })
 
@@ -17,8 +17,8 @@ const parallelTests = async (capability) => {
   await element.click();
   await element.type('LambdaTest');
   await Promise.all([
-      page.keyboard.press('Enter'),
-      page.waitForNavigation()
+    page.keyboard.press('Enter'),
+    page.waitForNavigation()
   ]);
   const title = await page.title()
 
@@ -26,10 +26,10 @@ const parallelTests = async (capability) => {
   try {
     expect(title).equal('LambdaTest at DuckDuckGo', 'Expected page title is incorrect!');
     // Mark the test as completed or failed
-    await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'passed', remark: 'Title matched' } })}`)
+    await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'passed', remark: 'Title matched' } })}`)
     await teardown(page, browser)
   } catch (e) {
-    await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'failed', remark: e.stack } })}`)
+    await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'failed', remark: e.stack } })}`)
     await teardown(page, browser)
   }
 
