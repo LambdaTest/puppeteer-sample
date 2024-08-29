@@ -1,7 +1,7 @@
 'use strict';
 import { connect } from 'puppeteer';
 
-(async () => {
+(async () => {    
     const capabilities = {
         'browserName': 'Chrome',
         'browserVersion': 'latest',
@@ -9,16 +9,16 @@ import { connect } from 'puppeteer';
             'platform': 'Windows 10',
             'build': 'puppeteer-build-1',
             'name': 'My first Puppeteer test',
-            'resolution': '1366x768',
+            'resolution':'1366x768',
             'user': process.env.LT_USERNAME || "Your Username",
             'accessKey': process.env.LT_ACCESS_KEY || "Your Access Key",
-            'network': true,
-            'visual': true
+            'network': true
         }
-    };
+   };
 
+    let browser;
     try {
-        const browser = await connect({
+        browser = await puppeteer.connect({
             browserWSEndpoint:
                 `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`,
         });
@@ -28,7 +28,7 @@ import { connect } from 'puppeteer';
             width: 1024,
             height: 768,
             deviceScaleFactor: 1,
-        });
+          });
         console.log("Navigating to LambdaTest");
         await page.goto('https://www.lambdatest.com/');
         console.log("Navigating to Pricing");
@@ -36,13 +36,17 @@ import { connect } from 'puppeteer';
         console.log("Navigating to Automation");
         await page.goto('https://www.lambdatest.com/automation-testing');
 
-        await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'passed', remark: "Test Passed" } })}`)
+        await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'passed', remark: "Test Passed" } })}`)
 
         console.log("Closing browser");
         await browser.close();
 
     } catch (e) {
-        await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'failed', remark: "Test Failed" } })}`)
+        if (browser) {
+        const page = await browser.newPage();
+        await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'failed', remark: "Test Failed" } })}`)
+        await browser.close();
+        }
         console.log("Error - ", e);
     }
 })();
