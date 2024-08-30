@@ -1,5 +1,5 @@
-const puppeteer = require("puppeteer");
-const expect = require("chai").expect;
+import { connect } from "puppeteer";
+import { expect } from "chai";
 let browser, page;
 
 (async () => {
@@ -20,7 +20,7 @@ let browser, page;
   };
 
   try {
-    browser = await puppeteer.connect({
+    browser = await connect({
       browserWSEndpoint: `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`
     });
 
@@ -34,9 +34,9 @@ let browser, page;
     await page.goto("https://www.bing.com");
 
     // Add the following command in order to take screenshot in SmartUI
-    await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({
+    await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({
       action: "smartui.takeScreenshot",
-      arguments: {screenshotName: "<Your Screenshot Name>"},
+      arguments: { screenshotName: "<Your Screenshot Name>" },
     })}`);
 
     const element = await page.$("[aria-label=\"Enter your search term\"]");
@@ -47,22 +47,22 @@ let browser, page;
 
     try {
       expect(pageTitle).equal("LambdaTest - Search");
-      await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({
+      await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({
         action: "setTestStatus",
-        arguments: {status: "passed", remark: "Title matched"},
+        arguments: { status: "passed", remark: "Title matched" },
       })}`);
     } catch (e) {
-      await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({
+      await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({
         action: "setTestStatus",
-        arguments: {status: "failed", remark: e.stack},
+        arguments: { status: "failed", remark: e.stack },
       })}`);
     }
 
     await browser.close();
   } catch (e) {
-    await page.evaluate(_ => {}, `lambdatest_action: ${JSON.stringify({
+    await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({
       action: "setTestStatus",
-      arguments: {status: "failed", remark: e.stack},
+      arguments: { status: "failed", remark: e.stack },
     })}`);
 
     await browser.close();
