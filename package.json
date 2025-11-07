@@ -1,8 +1,9 @@
 {
   "type": "module",
   "devDependencies": {
-    "chai": "^5.1.1",
-    "puppeteer": "^23.2.0"
+    "chai": "^6.0.1",
+    "puppeteer": "^24.29.0"
+
   },
   "scripts": {
     "test": "npm run single",
@@ -10,6 +11,6 @@
     "parallel": "node puppeteer-parallel.js"
   },
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^1.13.2"
   }
 }
