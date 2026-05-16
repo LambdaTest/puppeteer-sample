@@ -1,43 +1,7 @@
-const puppeteer = require('puppeteer');
+const page = require('./hooks').page;
 const expect = require('chai').expect;
-const caps_chrome = {
-	browserName    : 'Chrome',
-	browserVersion : 'latest',
-	'LT:Options'   : {
-		platform   : 'Windows 10',
-		build      : 'Sample Puppeteer-Mocha',
-		name       : 'Puppeteer-mocha test on Chrome',
-		resolution : '1366x768',
-		user       : process.env.LT_USERNAME,
-		accessKey  : process.env.LT_USER_KEY,
-		network    : true
-	}
-};
-const caps_edge = {
-	browserName    : 'MicrosoftEdge',
-	browserVersion : 'latest',
-	'LT:Options'   : {
-		platform   : 'Windows 10',
-		build      : 'Sample Puppeteer-Mocha',
-		name       : 'Puppeteer-mocha test on Edge',
-		resolution : '1366x768',
-		user       : process.env.LT_USERNAME,
-		accessKey  : process.env.LT_USER_KEY,
-		network    : true
-	}
-};
 
-let browser = null;
-let page = null;
 describe('Search Text', () => {
-	beforeEach(async () => {
-		browser = await puppeteer.connect({
-			browserWSEndpoint : `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(
-				JSON.stringify(caps_chrome)
-			)}`
-		});
-		page = await browser.newPage();
-	});
 
 	it('should be titled "Google"', async () => {
 		let text = 'Google';
@@ -70,8 +34,4 @@ describe('Search Text', () => {
 		}
 	});
 
-	afterEach(async () => {
-		await page.close();
-		await browser.close();
-	});
 });
