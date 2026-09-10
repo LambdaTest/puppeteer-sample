@@ -13,7 +13,7 @@
 With TestMu AI (Formerly LambdaTest), you can run Puppeteer automation tests on real browsers at scale. This sample shows how to configure Puppeteer to run on the TestMu AI cloud.
 
 - [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
-- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/puppeteer-testing/) for the full setup walkthrough.
+- Follow the [Run Puppeteer tests on TestMu AI](https://www.testmuai.com/support/docs/puppeteer-testing/) for the full setup walkthrough.
 
 ### Prerequisites
 
