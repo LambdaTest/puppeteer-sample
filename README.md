@@ -1,7 +1,5 @@
 # Run Puppeteer Tests on TestMu AI (Formerly LambdaTest)
 
-> Run End-to-End (E2E) testing with Puppeteer across real browsers and operating systems on the TestMu AI cloud.
-
 <p align="center">
   <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
   <a href="https://www.npmjs.com/package/puppeteer"><img src="https://img.shields.io/npm/v/puppeteer.svg?style=for-the-badge&labelColor=000000" alt="Puppeteer version"></a>
@@ -12,7 +10,7 @@
 
 [TestMu AI](https://www.testmuai.com/) (Formerly LambdaTest) is the world's first full-stack AI Agentic Quality Engineering platform that empowers teams to test intelligently, smarter, and ship faster. Built for scale, it offers a full-stack testing cloud with 10K+ real devices and 3,000+ browsers. With AI-native test management, MCP servers, and agent-based automation, TestMu AI supports Selenium, Appium, Playwright, and all major frameworks. 
 
-With TestMu AI (Formerly LambdaTest), you can run Puppeteer automation tests on real browsers at scale. This sample shows how to configure Puppeteer to run on the TestMu AI cloud.
+With TestMu AI (Formerly LambdaTest), you can perform End-to-End (E2E) testing by running Puppeteer automation tests on real browsers at scale. This sample shows how to configure Puppeteer to run on the TestMu AI cloud.
 
 - [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
 - Follow the [Run Puppeteer tests on TestMu AI](https://www.testmuai.com/support/docs/puppeteer-testing/) for the full setup walkthrough.
